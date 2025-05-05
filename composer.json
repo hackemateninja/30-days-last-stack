@@ -9,6 +9,7 @@
 		"doctrine/doctrine-bundle": "^2.14",
 		"doctrine/doctrine-migrations-bundle": "^3.4",
 		"doctrine/orm": "^3.3",
+		"symfony/asset-mapper": "7.2.*",
 		"symfony/console": "7.2.*",
 		"symfony/dotenv": "7.2.*",
 		"symfony/flex": "^2",
@@ -57,13 +58,17 @@
 	"scripts": {
 		"auto-scripts": {
 			"cache:clear": "symfony-cmd",
-			"assets:install %PUBLIC_DIR%": "symfony-cmd"
+			"assets:install %PUBLIC_DIR%": "symfony-cmd",
+			"importmap:install": "symfony-cmd"
 		},
 		"post-install-cmd": [
 			"@auto-scripts"
 		],
 		"post-update-cmd": [
 			"@auto-scripts"
+		],
+		"fix":[
+			"PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php"
 		]
 	},
 	"conflict": {
@@ -78,6 +83,7 @@
 	},
 	"require-dev": {
 		"doctrine/doctrine-fixtures-bundle": "^4.1",
+		"friendsofphp/php-cs-fixer": "dev-master",
 		"symfony/debug-bundle": "7.2.*",
 		"symfony/maker-bundle": "^1.63",
 		"symfony/stopwatch": "7.2.*",

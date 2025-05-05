@@ -10,24 +10,24 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class VoyageType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-            ->add('purpose')
-            ->add('leaveAt', DateType::class, [
-                'widget' => 'single_text',
-            ])
-            ->add('planet', null, [
-                'choice_label' => 'name',
-                'placeholder' => 'Choose a planet',
-            ])
-        ;
-    }
+	public function buildForm(FormBuilderInterface $builder, array $options): void
+	{
+		$builder
+			->add('purpose')
+			->add('leaveAt', DateType::class, [
+				'widget' => 'single_text',
+			])
+			->add('planet', null, [
+				'choice_label' => 'name',
+				'placeholder' => 'Choose a planet',
+			])
+		;
+	}
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => Voyage::class,
-        ]);
-    }
+	public function configureOptions(OptionsResolver $resolver): void
+	{
+		$resolver->setDefaults([
+			'data_class' => Voyage::class,
+		]);
+	}
 }
