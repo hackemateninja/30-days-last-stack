@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa42e93c0950af84f6f9206c6b543c87",
+    "content-hash": "b5a40a0dac6a928fa7d1d0ba671d63c6",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -6114,7 +6114,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "zenstruck/foundry": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
