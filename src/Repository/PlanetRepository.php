@@ -12,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Planet|null find($id, $lockMode = null, $lockVersion = null)
  * @method Planet|null findOneBy(array $criteria, array $orderBy = null)
  * @method Planet[]    findAll()
- * @method Planet[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Planet[]    findBy(array $criteria, ?array $orderBy, $limit, $offset)
  */
 class PlanetRepository extends ServiceEntityRepository
 {

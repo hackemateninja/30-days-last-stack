@@ -16,11 +16,11 @@ class MainController extends AbstractController
     public function homepage(
         VoyageRepository $voyageRepository,
         PlanetRepository $planetRepository,
-        #[MapQueryParameter('query')] string $query = null,
+        #[MapQueryParameter('query')] ?string $query,
         #[MapQueryParameter('planets', \FILTER_VALIDATE_INT)] array $searchPlanets = [],
     ): Response
     {
-        $voyages = $voyageRepository->findBySearch($query, $searchPlanets);
+        $voyages = $voyageRepository->findBySearch($query, $searchPlanets, null);
 
         return $this->render('main/homepage.html.twig', [
             'voyages' => $voyages,

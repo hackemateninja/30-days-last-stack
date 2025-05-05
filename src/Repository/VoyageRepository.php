@@ -13,7 +13,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Voyage|null find($id, $lockMode = null, $lockVersion = null)
  * @method Voyage|null findOneBy(array $criteria, array $orderBy = null)
  * @method Voyage[]    findAll()
- * @method Voyage[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Voyage[]    findBy(array $criteria, ?array $orderBy, $limit, $offset)
  */
 class VoyageRepository extends ServiceEntityRepository
 {
@@ -25,7 +25,7 @@ class VoyageRepository extends ServiceEntityRepository
     /**
      * @return Voyage[]
      */
-    public function findBySearch(?string $query, array $searchPlanets, int $limit = null): array
+    public function findBySearch(?string $query, array $searchPlanets, ?int $limit = null): array
     {
         $qb =  $this->findBySearchQueryBuilder($query, $searchPlanets);
 
