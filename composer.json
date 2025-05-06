@@ -9,6 +9,7 @@
 		"doctrine/doctrine-bundle": "^2.14",
 		"doctrine/doctrine-migrations-bundle": "^3.4",
 		"doctrine/orm": "^3.3",
+		"knplabs/knp-time-bundle": "dev-main",
 		"symfony/asset": "7.2.*",
 		"symfony/asset-mapper": "7.2.*",
 		"symfony/console": "7.2.*",
@@ -19,10 +20,12 @@
 		"symfony/monolog-bundle": "^3.10",
 		"symfony/runtime": "7.2.*",
 		"symfony/security-csrf": "7.2.*",
+		"symfony/stimulus-bundle": "2.x-dev",
 		"symfony/twig-bundle": "7.2.*",
 		"symfony/validator": "7.2.*",
 		"symfony/yaml": "7.2.*",
 		"symfonycasts/tailwind-bundle": "dev-main",
+		"tales-from-a-dev/flowbite-bundle": "dev-main",
 		"twig/extra-bundle": "^2.12|^3.0",
 		"twig/twig": "^2.12|^3.0"
 	},
@@ -78,7 +81,7 @@
 	},
 	"extra": {
 		"symfony": {
-			"allow-contrib": false,
+			"allow-contrib": true,
 			"require": "7.2.*",
 			"docker": true
 		}

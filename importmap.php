@@ -19,4 +19,10 @@ return [
     'js-confetti' => [
         'version' => '0.12.0',
     ],
+    '@hotwired/stimulus' => [
+        'version' => '3.2.2',
+    ],
+    '@symfony/stimulus-bundle' => [
+        'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
+    ],
 ];
