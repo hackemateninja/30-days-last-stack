@@ -4,8 +4,95 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa30fa4eb21b849cd730377369266ee5",
+    "content-hash": "3eaf2af767961392dd402b53c8b760a8",
     "packages": [
+        {
+            "name": "babdev/pagerfanta-bundle",
+            "version": "5.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BabDev/PagerfantaBundle.git",
+                "reference": "30920e9500f15717a012b781e3570980dbc5a62e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BabDev/PagerfantaBundle/zipball/30920e9500f15717a012b781e3570980dbc5a62e",
+                "reference": "30920e9500f15717a012b781e3570980dbc5a62e",
+                "shasum": ""
+            },
+            "require": {
+                "pagerfanta/core": "^4.7 || ^5.0",
+                "php": "^8.2",
+                "psr/container": "^1.0 || ^2.0",
+                "symfony/config": "^6.4 || ^7.2",
+                "symfony/dependency-injection": "^6.4 || ^7.2",
+                "symfony/http-foundation": "^6.4 || ^7.2",
+                "symfony/http-kernel": "^6.4 || ^7.2",
+                "symfony/property-access": "^6.4 || ^7.2",
+                "symfony/routing": "^6.4 || ^7.2"
+            },
+            "conflict": {
+                "jms/serializer": "<3.28",
+                "jms/serializer-bundle": "<5.4",
+                "pagerfanta/twig": "<4.7",
+                "symfony/serializer": "<6.4 || >=7.0,<7.2",
+                "symfony/translation": "<6.4 || >=7.0,<7.2",
+                "symfony/twig-bridge": "<6.4 || >=7.0,<7.2",
+                "symfony/twig-bundle": "<6.4 || >=7.0,<7.2",
+                "twig/twig": "<3.12",
+                "white-october/pagerfanta-bundle": "*"
+            },
+            "require-dev": {
+                "jms/serializer": "^3.28",
+                "jms/serializer-bundle": "^5.4",
+                "matthiasnoback/symfony-dependency-injection-test": "^5.0",
+                "pagerfanta/twig": "^4.7 || ^5.0",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "2.0.3",
+                "phpstan/phpstan-phpunit": "2.0.1",
+                "phpstan/phpstan-symfony": "2.0.0",
+                "phpunit/phpunit": "9.6.21",
+                "symfony/phpunit-bridge": "^6.4 || ^7.2",
+                "symfony/serializer": "^6.4 || ^7.2",
+                "symfony/translation": "^6.4 || ^7.2",
+                "symfony/twig-bridge": "^6.4 || ^7.2",
+                "symfony/twig-bundle": "^6.4 || ^7.2",
+                "twig/twig": "^3.12"
+            },
+            "suggest": {
+                "jms/serializer-bundle": "To use the Pagerfanta class with the JMS Serializer",
+                "symfony/serializer": "To use the Pagerfanta class with the Symfony Serializer",
+                "symfony/translation": "To use the Twig templates with translation support",
+                "twig/twig": "To integrate Pagerfanta with Twig through extensions"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "BabDev\\PagerfantaBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Bundle integrating Pagerfanta with Symfony",
+            "keywords": [
+                "pagerfanta",
+                "pagination",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/BabDev/PagerfantaBundle/issues",
+                "source": "https://github.com/BabDev/PagerfantaBundle/tree/5.x"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/mbabker",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-03-28T02:20:45+00:00"
+        },
         {
             "name": "composer/semver",
             "version": "dev-main",
@@ -1453,6 +1540,140 @@
                 }
             ],
             "time": "2025-04-03T11:44:45+00:00"
+        },
+        {
+            "name": "pagerfanta/core",
+            "version": "5.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pagerfanta/core.git",
+                "reference": "51d06bf19d2acd8b48cb561994c72a1f9a1212ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pagerfanta/core/zipball/51d06bf19d2acd8b48cb561994c72a1f9a1212ba",
+                "reference": "51d06bf19d2acd8b48cb561994c72a1f9a1212ba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pagerfanta\\": "./"
+                },
+                "exclude-from-classmap": [
+                    "Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Core Pagerfanta API",
+            "keywords": [
+                "pagerfanta"
+            ],
+            "support": {
+                "source": "https://github.com/Pagerfanta/core/tree/5.x"
+            },
+            "time": "2025-03-26T04:26:38+00:00"
+        },
+        {
+            "name": "pagerfanta/doctrine-orm-adapter",
+            "version": "5.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pagerfanta/doctrine-orm-adapter.git",
+                "reference": "768b8ced67234965301f443b9792d9f60701c677"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pagerfanta/doctrine-orm-adapter/zipball/768b8ced67234965301f443b9792d9f60701c677",
+                "reference": "768b8ced67234965301f443b9792d9f60701c677",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.20 || ^3.3",
+                "pagerfanta/core": "^4.7 || ^5.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.5",
+                "symfony/cache": "^6.4 || ^7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pagerfanta\\Doctrine\\ORM\\": "./"
+                },
+                "exclude-from-classmap": [
+                    "Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Pagerfanta adapter for Doctrine ORM",
+            "keywords": [
+                "doctrine",
+                "orm",
+                "pagerfanta"
+            ],
+            "support": {
+                "source": "https://github.com/Pagerfanta/doctrine-orm-adapter/tree/5.x"
+            },
+            "time": "2025-03-26T03:40:42+00:00"
+        },
+        {
+            "name": "pagerfanta/twig",
+            "version": "5.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pagerfanta/twig.git",
+                "reference": "6c98ddd713b826051330667ac4cda71377db5a04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pagerfanta/twig/zipball/6c98ddd713b826051330667ac4cda71377db5a04",
+                "reference": "6c98ddd713b826051330667ac4cda71377db5a04",
+                "shasum": ""
+            },
+            "require": {
+                "pagerfanta/core": "^4.7 || ^5.0",
+                "php": "^8.2",
+                "twig/twig": "^3.12"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pagerfanta\\Twig\\": "./"
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Twig integration for Pagerfanta",
+            "keywords": [
+                "pagerfanta"
+            ],
+            "support": {
+                "source": "https://github.com/Pagerfanta/twig/tree/5.x"
+            },
+            "time": "2025-03-26T04:26:38+00:00"
         },
         {
             "name": "psr/cache",
@@ -8126,8 +8347,11 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "babdev/pagerfanta-bundle": 20,
         "friendsofphp/php-cs-fixer": 20,
         "knplabs/knp-time-bundle": 20,
+        "pagerfanta/doctrine-orm-adapter": 20,
+        "pagerfanta/twig": 20,
         "symfony/stimulus-bundle": 20,
         "symfony/ux-autocomplete": 20,
         "symfony/ux-turbo": 20,

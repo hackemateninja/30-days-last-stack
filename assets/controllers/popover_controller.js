@@ -1,5 +1,6 @@
 import Popover from 'stimulus-popover';
 
+/* stimulusFetch: 'lazy' */
 export default class extends Popover {
 	async show(t) {
 		if (this.hasCardTarget) {
