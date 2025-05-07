@@ -23,6 +23,7 @@
 		"symfony/stimulus-bundle": "2.x-dev",
 		"symfony/twig-bundle": "7.2.*",
 		"symfony/ux-autocomplete": "2.x-dev",
+		"symfony/ux-turbo": "2.x-dev",
 		"symfony/validator": "7.2.*",
 		"symfony/yaml": "7.2.*",
 		"symfonycasts/tailwind-bundle": "dev-main",

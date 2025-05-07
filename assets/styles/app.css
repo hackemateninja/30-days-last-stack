@@ -56,3 +56,12 @@
 .ts-wrapper .ts-dropdown {
     @apply shadow-md;
 }
+
+[data-popover-target=card]:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    border-width: .75rem;
+    @apply border-t-white dark:border-t-gray-900 border-transparent;
+}

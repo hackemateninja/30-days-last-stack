@@ -20,7 +20,7 @@ return [
         'version' => '0.12.0',
     ],
     '@hotwired/stimulus' => [
-        'version' => '3.2.2',
+        'version' => '3.2.1',
     ],
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
@@ -37,5 +37,11 @@ return [
     'tom-select/dist/css/tom-select.default.css' => [
         'version' => '2.4.3',
         'type' => 'css',
+    ],
+    '@hotwired/turbo' => [
+        'version' => '7.3.0',
+    ],
+    'stimulus-popover' => [
+        'version' => '6.2.0',
     ],
 ];
