@@ -54,7 +54,7 @@
 				>
 				<div class="whitespace-nowrap m-2 mr-4">{{ voyages|length }} results</div>
 			</form>
-			<turbo-frame id="voyage-list">
+			<turbo-frame id="voyage-list" data-turbo-action="advance" class="aria-busy:opacity-50 aria-busy:blur-sm transition-all">
 				<div class="bg-gray-800 p-4 rounded">
 					<table class="w-full text-white">
 						<thead>
@@ -86,24 +86,25 @@
 								<td class="p-4">{{ voyage.purpose }}</td>
 								<td class="px-2 whitespace-nowrap">
 									<div
-											data-controller="popover"
-											data-action="mouseenter->popover#show mouseleave->popover#hide"
-											class="relative"
+										data-controller="popover"
+										data-action="mouseenter->popover#show mouseleave->popover#hide"
+										class="relative"
 									>
 										<img
-												src="{{ asset('images/'~voyage.planet.imageFilename) }}"
-												alt="Image of {{ voyage.planet.name }}"
-												class="inline-block w-8 h-8 rounded-full bg-gray-600 ml-2"
+											src="{{ asset('images/'~voyage.planet.imageFilename) }}"
+											alt="Image of {{ voyage.planet.name }}"
+											class="inline-block w-8 h-8 rounded-full bg-gray-600 ml-2"
 										>
 										<template data-popover-target="content">
 											<div
-													data-popover-target="card"
-													class="max-w-sm rounded shadow-lg bg-gray-900 absolute left-0 bottom-10"
+												data-popover-target="card"
+												class="max-w-sm rounded shadow-lg bg-gray-900 absolute left-0 bottom-10"
 											>
 												<turbo-frame
-														loading="lazy"
-														id="planet-card-{{ voyage.planet.id }}"
-														src="{{ path('app_planet_show_card', {id: voyage.planet.id}) }}">
+													data-skip-transition
+													loading="lazy"
+													id="planet-card-{{ voyage.planet.id }}"
+													src="{{ path('app_planet_show_card', {id: voyage.planet.id}) }}">
 
 													<div class="p-10">
 														<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="animate-spin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg>

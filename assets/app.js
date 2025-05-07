@@ -1,4 +1,6 @@
 import './bootstrap.js';
+import { shouldPerformTransition, performTransition } from 'turbo-view-transitions';
+
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -10,4 +12,29 @@ import alienGreeting from "./js/lib/alien-greeting.js";
 
 alienGreeting('Hello world!', true)
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+let skipNextRenderTransition = false;
+document.addEventListener('turbo:before-render', (event) => {
+	if (shouldPerformTransition() && !skipNextRenderTransition) {
+		event.preventDefault();
+		performTransition(document.body, event.detail.newBody, async () => {
+			await event.detail.resume();
+		});
+	}
+});
+document.addEventListener('turbo:load', () => {
+	// View Transitions don't play nicely with Turbo cache
+	if (shouldPerformTransition()) Turbo.cache.exemptPageFromCache();
+});
+
+document.addEventListener('turbo:before-frame-render', (event) => {
+	if (shouldPerformTransition() && !event.target.hasAttribute('data-skip-transition'))  {
+		skipNextRenderTransition = true;
+		setTimeout(() => {
+			skipNextRenderTransition = false;
+		}, 100);
+		event.preventDefault();
+		performTransition(event.target, event.detail.newFrame, async () => {
+			await event.detail.resume();
+		});
+	}
+});
