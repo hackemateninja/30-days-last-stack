@@ -51,7 +51,7 @@ class PlanetController extends AbstractController
 			'planet' => $planet,
 		]);
 	}
-	
+
 	#[Route('/{id}/card', name: 'app_planet_show_card', methods: ['GET'])]
 	public function showCard(Planet $planet): Response
 	{
@@ -59,7 +59,7 @@ class PlanetController extends AbstractController
 			'planet' => $planet,
 		]);
 	}
-	
+
 	#[Route('/{id}/edit', name: 'app_planet_edit', methods: ['GET', 'POST'])]
 	public function edit(Request $request, Planet $planet, EntityManagerInterface $entityManager): Response
 	{

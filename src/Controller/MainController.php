@@ -23,10 +23,9 @@ class MainController extends AbstractController
 		#[MapQueryParameter] string $sortDirection = 'ASC',
 		#[MapQueryParameter('planets', \FILTER_VALIDATE_INT)] array $searchPlanets = [],
 	): Response {
-		
 		$validSorts = ['purpose', 'leaveAt'];
 		$sort = in_array($sort, $validSorts) ? $sort : 'leaveAt';
-		
+
 		$pager = Pagerfanta::createForCurrentPageWithMaxPerPage(
 			new QueryAdapter($voyageRepository->findBySearchQueryBuilder($query, $searchPlanets, $sort, $sortDirection)),
 			$page,
