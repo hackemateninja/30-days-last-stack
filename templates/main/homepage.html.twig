@@ -2,6 +2,8 @@
 
 {% block title %}Space Inviters!{% endblock %}
 
+{% set voyages_count = voyages|length %}
+
 {% macro sortArrow(sortName, sort, sortDirection) %}
 	{% if sort == sortName %}
 		{% if sortDirection == 'asc' %}
@@ -52,7 +54,11 @@
 						data-action="autosubmit#debouncedSubmit"
 						autofocus
 				>
-				<div class="whitespace-nowrap m-2 mr-4">{{ voyages|length }} results</div>
+
+				{% block result_count %}
+					<div id="voyage-result-count" class="whitespace-nowrap m-2 mr-4">{{ voyages_count }} results</div>
+				{% endblock %}
+
 			</form>
 			<turbo-frame id="voyage-list" data-turbo-action="advance" class="aria-busy:opacity-50 aria-busy:blur-sm transition-all">
 				<div class="bg-gray-800 p-4 rounded">
@@ -134,6 +140,11 @@
 
 
 				</div>
+				<turbo-stream action="replace" target="voyage-result-count">
+					<template>
+						{{ block('result_count') }}
+					</template>
+				</turbo-stream>
 			</turbo-frame>
 		</section>
 	</div>

@@ -9,7 +9,6 @@ export default class extends Controller {
 		autoClose: Number
 	}
 
-
 	static targets = ['timerbar'];
 
 	connect() {
